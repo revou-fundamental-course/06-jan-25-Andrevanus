@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- ini adalah link css -->
+    <title>RevoU Mini Project - Andrevanus </title>
+
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ini adalah link agar html terhubung dengan css -->
     <link rel="stylesheet" href="css\styles.css" />
   </head>
 
@@ -16,63 +25,95 @@
 
       <!-- ini navigation -->
       <nav>
-        <a href="#home-page" class="left-rounded">Home</a>
-        <a href="#our-profile">Our Profile</a>
-        <a href="#portofolio">Portofolio</a>
-        <a href="#contact-us" class="right-rounded">Contact Us</a>
+        <a href="#home-page" class="left-rounded"><b>Home</b></a>
+        <a href="#our-profile"><b>Profile</b></a>
+        <a href="#portofolio"><b>Portofolio</b></a>
+        <a href="#contact-us" class="right-rounded"><b>Contact Us</b></a>
       </nav>
     </header>
 
     <!-- garis pembatas -->
-    <hr />
+    <!-- <hr /> -->
 
     <!-- main konten -->
     <main>
       <!-- ini adalah Home Page -->
-      <section>
+      <section class="hero">
         <!-- ini adalah Title -->
-        <header id="home-page">
+        <header class="content" id="home-page">
           <h1>
             Hi <span id="user-greeting">User</span>, Welcome to our Website!
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
-            tenetur voluptatem eum, tempora maxime dolorem reprehenderit eius
-            incidunt sequi libero magni, impedit vero veritatis, at non
-            perspiciatis doloribus qui itaque.
+            Mari bersama kita membangun kerjasama dan menjadi bagian dari mitra, menciptakan berbagai karya menarik sesuai kebutuhan anda.
           </p>
         </header>
-
-        <div class="banner-image"></div>
       </section>
+      <!-- ini adalah end Home Page -->
 
       <!-- ini adalah About Us Page -->
-      <section>
+      <section class="our-service">
         <!-- ini adalah Title Our Profile-->
-        <header id="our-profile">
-          <h1>Our Profile</h1>
-        </header>
-
-        <div class="content"></div>
-      </section>
+        <h2 style="text-align: center;">Our Services</h2>
+        <div class="gallery-cards">
+            <div class="gallery-card"><img src="asset/img/photograph.jpg" alt="Fotografi"><p><b>Fotografi</b></p></div>
+            <div class="gallery-card"><img src="asset/img/videograph.jpg" alt="Videografi"><p><b>Videografi</b></p></div>
+            <div class="gallery-card"><img src="asset/img/editing.jpg" alt="Editing"><p><b>Editing</b></p></div>
+            <div class="gallery-card"><img src="asset/img/graphic design.jpg" alt="Grafis"><p><b>Desain Grafis</b></p></div>
+        </div>
 
       <!-- ini adalah Portofolio Page -->
-      <section>
-        <header id="portofolio">
-          <h1>Portofolio</h1>
-        </header>
-
-        <div class="content"></div>
+      <section class="portofolio">
+          <h2 style="text-align: center;">Portofolio</h2>
+          <div class="slider">
+            <!-- Slides Picture -->
+            <div class="slides">
+                <img src="asset/img/konser.jpeg" alt="Konser">
+                <img src="asset/img/seminar.jpg" alt="Seminar">
+                <img src="asset/img/show.jpg" alt="Show">
+            </div>                     
+            <!-- Navigation - ON -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
       </section>
 
-      <!-- ini adalah Contact Us Page -->
-      <section>
-        <header id="contact-us">
-          <h1>Contact Us</h1>
-        </header>
+      <!-- Article 4: Message Us Section -->
+       <div class="message-us">
+        <h2 style="text-align: center;">Message Us</h2>
+      </div>
+      <div class="message-container">
+          <div class="message-form">
+              <!-- Form untuk mengirim pesan -->
+              <form name="message-form" onsubmit="return showAnswer()">
+                  <!-- Input untuk Nama -->
+                  <label for="name">Nama Anda:</label>
+                  <input type="text" id="name" name="name" placeholder="Nama lengkap anda">
+          
+                  <!-- Input untuk Email -->
+                  <label for="email">Email Anda:</label>
+                  <input type="email" id="email" name="email" placeholder="contoh@email.com">
+          
+                  <!-- Input untuk Tanggal Lahir -->
+                  <label for="date">Tanggal Lahir:</label>
+                  <input type="date" id="date" name="date">
 
-        <div class="content"></div>
-      </section>
+                  <!-- Dropdown untuk Pilihan Jenis Kelamin -->
+                  <label for="gender">Jenis Kelamin:</label>
+                  <select id="gender" name="gender">
+                      <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                      <option value="Laki-Laki">Laki-Laki</option>
+                      <option value="Perempuan">Perempuan</option>
+                  </select>
+
+                  <!-- Textarea untuk Pesan -->
+                  <label for="message">Pesan:</label><br>
+                  <textarea id="message" name="message" rows="4" cols="70"></textarea>
+          
+                  <!-- Tombol Kirim -->
+                  <button id="submit" type="submit">Kirim</button>
+              </form>
+          </div>
     </main>
 
     <hr />
